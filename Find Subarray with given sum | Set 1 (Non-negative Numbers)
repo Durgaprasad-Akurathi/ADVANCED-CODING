@@ -1,0 +1,42 @@
+#Given an array arr[] of non-negative integers and an integer sum, find a subarray that adds to a given sum.
+
+Note: There may be more than one subarray with sum as the given sum, print first such subarray. 
+
+Examples: 
+
+Input: arr[] = {1, 4, 20, 3, 10, 5}, sum = 33
+Output: Sum found between indexes 2 and 4
+Explanation: Sum of elements between indices 2 and 4 is 20 + 3 + 10 = 33
+
+
+//CODE
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	cin>>n;
+	int a[n];
+	int sum;
+	cin>>sum;
+	int value=0;
+	for(int i=0; i<n; i++)
+	cin>>a[i];
+	for(int i=0; i<n; i++)
+  {
+	value=a[i];
+	if(value==sum)
+	cout<<i;
+	else
+	{
+		for(int j=i+1; j<n; j++)
+    {
+		value+=a[j];
+		if(value==sum)
+		cout<<i<<" "<<j;
+    }
+	}
+  }
+}
+	
