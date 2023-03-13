@@ -1,0 +1,31 @@
+Given an array arr[] of integers. Find a peak element i.e. an element that is not smaller than its neighbors. 
+
+Note: For corner elements, we need to consider only one neighbor. 
+
+Example:
+
+Input: array[]= {5, 10, 20, 15}
+Output: 20
+Explanation: The element 20 has neighbors 10 and 15, both of them are less than 20.
+
+
+
+//CODE
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0; i<n; i++)
+	cin>>a[i];
+	int max=0;
+	for(int i=1; i<n-1; i++)
+	{
+		if((a[i-1]<a[i]) && (a[i]>a[i+1]))
+		max=a[i]; 
+	}
+	cout<<max<<endl;
+}
